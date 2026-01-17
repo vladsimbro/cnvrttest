@@ -503,7 +503,7 @@ button[data-tooltip]:hover::before, button[data-tooltip]:focus::before{ opacity:
   font-family: var(--ui);
   font-size: 14px;
   outline:none;
-  transition: border-color 260ms ease, box-shadow 260ms ease, background-color 800ms ease;
+  transition: border-color 160ms ease, box-shadow 160 ease, background-color 800ms ease;
 }
 :root[data-theme="dark"] .text-input, :root[data-theme="dark"] .select{
   background: rgba(24,28,34,0.60);
