@@ -1,5 +1,5 @@
 (function(){
-  const APP_VERSION = window.APP_VERSION || '1.2.18';
+  const APP_VERSION = window.APP_VERSION || '1.2.22';
 
   const historyKey = 'uuid_converter_history';
   const historyCounterKey = 'uuid_converter_history_counter';
