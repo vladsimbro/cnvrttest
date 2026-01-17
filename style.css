@@ -448,7 +448,7 @@ button[data-tooltip]:hover::before, button[data-tooltip]:focus::before{ opacity:
 
 /* tabs + tree inputs */
 .tabs{
-  display:flex;
+  display:0 0 auto;
   gap:8px;
   margin: 6px 0 14px 0;
   padding: 4px;
