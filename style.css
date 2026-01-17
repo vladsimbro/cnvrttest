@@ -614,7 +614,7 @@ button[data-tooltip]:hover::before, button[data-tooltip]:focus::before{ opacity:
 }
 
 .tabs{ width:100%; }
-  .tab-btn{ flex:1; justify-content:center; }
+  .tab-btn{ flex:0; justify-content:center; }
 }
 
 
