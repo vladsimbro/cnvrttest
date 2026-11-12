@@ -102,6 +102,7 @@
     const input = document.getElementById('input');
     const output = document.getElementById('output');
     const inputLineCount = document.getElementById('inputLineCount');
+    const outputLineCount = document.getElementById('outputLineCount');
     const treeUuidsLineCount = document.getElementById('treeUuidsLineCount');
     const convertBtn = document.getElementById('convert');
     const clearBtn = document.getElementById('clear');
@@ -143,6 +144,7 @@
     }
 
     function showUuidConvertSuccess(){
+      updateOutputLineCount();
       if(mainPanel){
         mainPanel.classList.remove('converted');
         void mainPanel.offsetWidth;
@@ -186,7 +188,8 @@
       if(input){ input.value = ''; input.placeholder = 'Введите строки...'; }
       if(output){ output.value = ''; output.placeholder = 'Здесь появится результат...'; output.scrollTop = 0; }
       toast('Очищено', 'success');
-          updateInputLineCount();
+      updateInputLineCount();
+      updateOutputLineCount();
       input && input.focus();
     });
 
@@ -990,6 +993,17 @@ const treeUuids = document.getElementById('treeUuids');
       if(!inputLineCount || !input) return;
       const n = countNonEmptyLines(input.value);
       inputLineCount.textContent = 'Кол-во строк: ' + n;
+    }
+
+    function updateOutputLineCount(){
+      if(!outputLineCount || !output) return;
+      // Each converted value occupies one line; the surrounding JSON brackets are not data.
+      const text = output.value;
+      let newlines = 0;
+      for(let i = 0; i < text.length; i++){
+        if(text.charCodeAt(i) === 10) newlines++;
+      }
+      outputLineCount.textContent = 'Кол-во строк: ' + Math.max(0, newlines - 1);
     }
 
     function updateTreeUuidsLineCount(){

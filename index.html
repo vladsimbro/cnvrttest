@@ -161,7 +161,10 @@
 
         <section class="block editor-card output-block" aria-labelledby="outputLabel">
           <label id="outputLabel" class="small field-label" for="output">Результат <span class="field-meta">JSON</span></label>
-          <textarea id="output" name="output" readonly placeholder="Здесь появится результат..." aria-label="Результат конвертации" spellcheck="false"></textarea>
+          <div class="textarea-wrap">
+            <textarea id="output" name="output" readonly placeholder="Здесь появится результат..." aria-label="Результат конвертации" spellcheck="false" class="with-counter"></textarea>
+            <div class="line-count" id="outputLineCount" aria-hidden="true" title="Количество строк данных, без скобок JSON">Кол-во строк: 0</div>
+          </div>
 
         </section>
           <div class="controls-row" role="region" aria-label="Панель управления">

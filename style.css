@@ -90,7 +90,7 @@ button:disabled { opacity: .5; cursor: default; }
 textarea, .text-input, .select, .hh-input { display: block; width: 100%; min-width: 0; max-width: 100%; border: 1px solid var(--border); border-bottom-color: var(--muted); border-radius: 6px; background: var(--field); color: var(--text); padding: 10px 12px; transition: border-color .16s, background-color .2s; }
 .text-input, .select, .hh-input { min-height: 42px; }
 textarea::placeholder, input::placeholder { color: var(--muted); opacity: .8; }
-textarea { resize: vertical; font: 13px/1.75 var(--mono); min-height: 210px; tab-size: 2; }
+textarea { resize: none; font: 13px/1.75 var(--mono); min-height: 210px; tab-size: 2; }
 textarea:focus, .text-input:focus, .select:focus, .hh-input:focus { border-color: var(--accent); }
 .editor-card > textarea, .editor-card > .textarea-wrap > textarea { border: 0; border-radius: 0; padding: 18px; }
 .editor-card > .textarea-wrap > textarea { padding-bottom: 44px; }
@@ -104,7 +104,7 @@ textarea:focus, .text-input:focus, .select:focus, .hh-input:focus { border-color
 .tree-settings > .block:has(#treeAction), #treeDayWrap, #treeRangeWrap, .tree-settings > .block:has(#treeToken), .tree-settings > .block:has(#treeUuids) { grid-column: 1 / -1; }
 .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .quick-row { grid-column: 1 / -1; display: flex; align-items: end; justify-content: flex-start; margin-top: -6px; }
-#treeOutput { flex: 1; resize: none; min-height: 400px; }
+#treeOutput { flex: 1; min-height: 400px; }
 #treeUuids { height: 210px; }
 .controls-row { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 2px; }
 .controls-left, .controls-right { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
@@ -181,7 +181,7 @@ kbd { display: inline-block; font: 11px var(--mono); padding: 3px 5px; border: 1
   .tab-btn { flex: 1; }
   #panelUuid, #panelTree { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   #panelUuid textarea { height: 280px; }
-  #treeOutput { min-height: 360px; resize: vertical; }
+  #treeOutput { min-height: 360px; }
   .controls-left { flex: 1 1 100%; }
   .controls-left button { width: 100%; }
   .controls-right { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); flex: 1 1 100%; }
