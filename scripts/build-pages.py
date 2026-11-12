@@ -5,14 +5,14 @@ import re
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
-ASSETS = ("style.css", "app.js", "version.js", "favicon.jpg")
+ASSETS = ("style.css", "app.js", "version.js", "favicon.svg")
 
 
 def build(destination: Path, revision: str) -> None:
     if not re.fullmatch(r"[0-9a-f]{40,64}", revision):
         raise ValueError("GITHUB_SHA must be a full Git commit identifier")
     html = (ROOT / "index.html").read_text(encoding="utf-8")
-    for asset in ("style.css", "app.js"):
+    for asset in ("style.css", "app.js", "favicon.svg"):
         # Works with both unversioned source URLs and older manual version strings.
         pattern = r'(["\'])' + re.escape(asset) + r'(?:\?[^"\']*)?\1'
         html, count = re.subn(pattern, lambda m: f'{m[1]}{asset}?v={revision}{m[1]}', html)

@@ -17,7 +17,7 @@ class PagesBuildTest(unittest.TestCase):
             for revision in ("a" * 40, "b" * 40):
                 module.build(output, revision)
                 html = (output / "index.html").read_text()
-                for asset in ("style.css", "app.js"):
+                for asset in ("style.css", "app.js", "favicon.svg"):
                     self.assertIn(f'{asset}?v={revision}', html)
                     self.assertEqual((output / asset).read_bytes(), (ROOT / asset).read_bytes())
                 self.assertNotEqual(previous, html)
